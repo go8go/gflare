@@ -25,7 +25,7 @@ def b_shifter(js):
         bb = b_string.split('{')
         b.extend(bb[shift_num:])
         b.extend(bb[:shift_num])
-        return json.dumps(b)
+        return 'b = ' + json.dumps(b)
     subbed = B_RE.sub(subber, js, 1).splitlines()
     c_removed = subbed[:2] + [ subbed[6][subbed[6].find(' c'):] ] + subbed[7:]
     return b, '\n'.join(c_removed)
